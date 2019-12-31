@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between my-2">
+                <span></span>
+                <h4>Mall Of Australia</h4>
+                <span></span>
+            </div>
+            <div class="search">
+                <i *ngIf="showSearch" class="fa fa-search" aria-hidden="true"></i>
+                <input (keyup)="searchByName($event)" type="text" class="form-control mt-0">
+                <i class="fa fa-microphone" aria-hidden="true"></i>
+            </div>
+            <div (click)="loadFacilityDetails()" class="list d-flex  my-2" *ngFor="let item of faciliList">
+                <a>
+                    <img src="../../../../assets/images/{{item.id}}.png"> {{item.name}}<span></span>
+                </a>
+            </div> 
+        </div>
+    </div>

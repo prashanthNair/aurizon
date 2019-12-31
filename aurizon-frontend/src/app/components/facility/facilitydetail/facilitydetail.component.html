@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between my-2 align-center">
+                <span (click)="navigateToHome()"><i class="fa fa-chevron-left my-2" aria-hidden="true">
+                   </i> <span class="navigation">Parental Facility</span></span>
+                
+                <span></span>
+            </div>
+            <div class="search">
+                <i *ngIf="showSearch" class="fa fa-search" aria-hidden="true"></i>
+                <input type="text" (keyup)="searchByName($event)" class="form-control mt-0">
+                <i class="fa fa-microphone" aria-hidden="true"></i>
+            </div>
+            <div (click)="getInfo(item.name)" class="detail d-flex justify-content-between" *ngFor="let item of parentaFacilityList">
+                <div>
+                    <img (click)="getInfo(item.name)" src='../../../../assets/images/toilet.png'>{{item.name}}<!-- load the image by name-->
+                </div>
+                <span>
+                    <label class="container">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </span>
+            </div>
+           
+        </div>
+    </div>

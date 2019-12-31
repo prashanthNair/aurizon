@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="d-flex justify-content-between header">
+        <span class="nav-color" (click)="getInfo()"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+            Parental Facility</span>
+        <h4>Toilet</h4>
+        <button (click)="showReview()" type="button" class="btn btn-info btn-sm">Post</button>
+        <span></span>
+    </div>
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#Review">Review</a></li>
+        <li><a data-toggle="tab" href="#Direction">Direction</a></li>
+        <li><a data-toggle="tab" href="#Photos">Photos</a></li>
+    </ul>
+    <br>
+    <div>
+
+    </div>
+    <div class="tab-content">
+        <div id="Direction" class="tab-pane fade">
+            <h3>Direction</h3> 
+        </div>
+        <div id="Review" class="tab-pane fade in active">
+            <div *ngIf="!hasShowReview">
+                <div class="review" *ngFor="let item of reviewList">
+                    <div class="">
+                        <div class="d-flex" style="margin-bottom: 10px;">
+                            <div>
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <span style="margin-left: 5px;">{{item.name}}</span>
+                        </div>
+                        <div class="d-flex header">
+                            <div>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div>
+                                <i class="fa fa-star"></i>
+                            </div>
+
+                        </div>
+                        <div class="info-warning">
+                            <span class="info-warning-msg">{{item.description}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="hasShowReview" class="addReview">
+                <h3>Review and earn reward points</h3>
+                <p>Please share you experience for better improvement
+                    and earn rewar points</p>
+                <div class="d-flex col-md-2 justify-content-between ">
+                    <div>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <input type="text" class="form-control my-2" [(ngModel)]="review" />
+                <div>
+                    <button (click)="postReview()" type="button" class="btn btn-info btn-sm">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div id="Photos" class="tab-pane fade">
+            <h3>Photos</h3>
+        </div>
+    </div>
+</div>

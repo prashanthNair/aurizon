@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="logo mt-5">
+        <a ><img src="../../../assets/images/logo.jpg"></a>
+        <h1>Welcome to</h1>
+        Mall of Australia
+      </div>
+    </div>
+    <div *ngIf="!showEmail" class="col-12">
+      <b>Signup with</b>
+      <a (click)="navigateToHome()" class="fb btn">
+        <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+      </a>
+      <a (click)="navigateToHome()" class="google btn"><i class="fa fa-google fa-fw">
+        </i> Login with Google+
+      </a>
+    </div>
+    <div class="col-12" *ngIf="showEmail">
+      <b>Signup with</b> 
+      <form class="register-form">
+        <div class="form-group">
+          <label  class="text-uppercase">Email</label>
+          <input type="text" (focusout)="validateEmail($event)" name ="formcontrol" class="form-control" [(ngModel)]="login.username.email"
+            [ngClass]="{ 'is-invalid': login.username.error }" />
+          <div *ngIf="login.username.error" class="invalid-feedback">
+            <div>Email is required</div>
+          </div> 
+        </div>
+        <div class="form-group">
+          <label for="password" class="text-uppercase">Password</label>
+          <input type="password"name ="formcontrol" class="form-control" [(ngModel)]="login.password.password"
+            [ngClass]="{ 'is-invalid': login.password.error }" />
+          <div *ngIf="login.password.error" class="invalid-feedback">
+            <div>Password is required</div>
+          </div> 
+        </div>
+        <div class="form-check">
+          <button (click)="onSignUp()" class="btn btn-register float-right">Sign Up</button>
+        </div>
+
+      </form>
+    </div>
+    <div class="col-12" *ngIf="!showEmail">
+      <div class="text-center mt-4 or mb-4">Or</div>
+      <div>
+        <a (click)="onEmailLogin()"><span>Signup with Emai</span>l</a>
+      </div>
+    </div>
+  </div>
+</div>
