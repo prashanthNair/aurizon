@@ -25,8 +25,8 @@ class App {
         this.config();
         this.mongoSetup(); 
         registerRoutes(this.app);
-        //this.app.use(notFoundErrorHandler)
-        //this.app.use(errorHandler);
+        this.app.use(notFoundErrorHandler)
+        this.app.use(errorHandler);
     }
 
     private config(): void {
