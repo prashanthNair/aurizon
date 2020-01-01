@@ -10,8 +10,7 @@ let testData: Home[] = [{
   id: 1,
   created_date: null,
   isValid: true
-}];
-
+}]; 
 
 let mockHomeService: IHomeService = {
   findAllFacility(): Promise<Home[]> { return Promise.resolve(<Home[]>testData); },
