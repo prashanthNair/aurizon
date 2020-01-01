@@ -28,8 +28,17 @@ MongoDB - Used only for logging.
 
 All Api's are depended with the database.
 
-For MySql, Please run the scripts from db_scripts (https://github.com/prashanthNair/Aurizon/Aurizon-backend/db_scripts)
+For MySql, Please run the scripts from db_scripts folder (https://github.com/prashanthNair/Aurizon/tree/master/Aurizon-backend/db_scripts)
 
+## MySql Config
+
+Please provide vaild Mysql user and password details in src\configuration\db.config.ts
+
+Example :
+
+host: 'localhost'
+user: 'root'
+password: 'Password@1'
 
 ## Build
 
