@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   showSearch: Boolean = true;
   faciliListClone: any = [];
-  faciliList: any = [{ name: " Parental Facility", id: "1" }, { name: " Parental Facility", id: "2" }, { name: " Parental Facility", id: "3" }];
+  faciliList: any = [];
   constructor(private router: Router, private homeService: HomeService) {
     this.router = router;
   }
