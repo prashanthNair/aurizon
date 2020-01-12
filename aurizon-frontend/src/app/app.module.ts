@@ -5,7 +5,10 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './components/auth/auth.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { StoreModule } from "@ngrx/store";
+import { reducer } from './Store/reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { HomeEffects } from './Store/effects';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule, 
     FormsModule, 
     HttpClientModule,
-    AppRoutingModule,AuthModule
+    AppRoutingModule,
+    AuthModule,
+    StoreModule.forRoot({home: reducer}),
+    EffectsModule.forRoot([HomeEffects])
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
